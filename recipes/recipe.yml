@@ -31,14 +31,17 @@ modules:
         - powertop
         - rofi
         - fuzzel
-        # COSMIC #
-        - cosmic-desktop-environment
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+    group-install:
+      with-optional: true
+      packages:
+        - cosmic-desktop
+        - cosmic-desktop-apps
 
   - type: default-flatpaks
     configurations:
@@ -58,6 +61,6 @@ modules:
 
   - type: systemd
     system:
-    enabled:
-      - cosmic-greeter.service
+      enabled:
+        - cosmic-greeter.service
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
