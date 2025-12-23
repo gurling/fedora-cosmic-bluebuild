@@ -65,9 +65,10 @@ modules:
     system:
       enabled:
         - cosmic-greeter.service
-    user:
-      enabled:
         - tailscaled.service
+#    user:
+#      enabled:
+#        - tailscaled.service
 
   - type: fonts
     fonts:
