@@ -29,6 +29,10 @@ modules:
         - jetbrains-mono-fonts-all
         - tlp
         - powertop
+        - rofi
+        - fuzzel
+        # COSMIC #
+        - @cosmic-desktop-environment
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -52,4 +56,8 @@ modules:
           - com.github.IsmaelMartinez.teams_for_linux
           - com.discordapp.Discord
 
+  - type: systemd
+    system:
+    enabled:
+      - cosmic-greeter.service
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
