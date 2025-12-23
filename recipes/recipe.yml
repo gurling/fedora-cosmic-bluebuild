@@ -51,7 +51,7 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
-      - scope: user # Also add Flathub user repo, but no user packages
+      - scope: user # Add Flathub user repo, with some user packages
         install:
           - io.missioncenter.MissionCenter
           - org.mozilla.firefox
@@ -63,4 +63,24 @@ modules:
     system:
       enabled:
         - cosmic-greeter.service
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+      - FiraCode # don't add spaces or "Nerd Font" suffix
+      - Terminus
+      - JetBrainsMono
+      - NerdFontsSymbolsOnly
+      google-fonts:
+      - Roboto
+      - Open Sans
+      - Inter
+
+  - type: os-release
+    properties:
+      ID: fedora_em
+      ID_LIKE: fedora
+      NAME: Fedora Linux Em
+      PRETTY_NAME: Fedora Linux Em (COSMIC Atomic)
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
