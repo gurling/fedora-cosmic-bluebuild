@@ -32,7 +32,7 @@ modules:
         - rofi
         - fuzzel
         # COSMIC #
-        - @cosmic-desktop-environment
+        - cosmic-desktop-environment
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
