@@ -19,11 +19,13 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       copr:
         - atim/starship
     install:
       packages:
-        - micro
+        - tailscale
         - starship
         - fira-code-fonts
         - jetbrains-mono-fonts-all
@@ -63,6 +65,9 @@ modules:
     system:
       enabled:
         - cosmic-greeter.service
+    user:
+      enabled:
+        - tailscaled.service
 
   - type: fonts
     fonts:
